@@ -1,0 +1,187 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:black;
+color:white;
+line-height:1.6;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1520975682031-a6a4a7c1a0b0") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:60px;
+letter-spacing:3px;
+}
+
+.hero p{
+font-size:20px;
+margin:15px 0;
+}
+
+.btn{
+padding:12px 25px;
+border:none;
+margin:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.gold{
+background:gold;
+color:black;
+}
+
+.white{
+background:white;
+color:black;
+}
+
+/* SECTIONS */
+
+section{
+padding:80px 10%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px;
+font-size:32px;
+}
+
+/* ABOUT */
+
+.about{
+text-align:center;
+max-width:700px;
+margin:auto;
+}
+
+/* PRODUCTS */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.product{
+background:#111;
+padding:20px;
+text-align:center;
+border-radius:10px;
+}
+
+.product img{
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.product h3{
+margin:10px 0;
+}
+
+.price{
+color:gold;
+margin-bottom:10px;
+}
+
+/* BRAND IDENTITY */
+
+.identity{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+text-align:center;
+}
+
+.identity div{
+background:#111;
+padding:25px;
+border-radius:10px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+/* REVIEWS */
+
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.review{
+background:#111;
+padding:20px;
+border-radius:10px;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+text-align:center;
+font-size:28px;
+margin-top:20px;
+}
+
+/* ORDER */
+
+.order{
+text-align:center;
+}
+
+/* INSTAGRAM */
+
+.instagram{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+}
+
+.instagram img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+/* WHATSAPP FLOAT */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+font-weight:bold;
+text-decoration:none;
+}
