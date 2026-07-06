@@ -16,7 +16,7 @@ slides[index].classList.add("active");
 
 /* COUNTDOWN */
 
-const drop = new Date("June 30, 2026 00:00:00").getTime();
+const drop = new Date("August 01, 2026 00:00:00").getTime();
 
 setInterval(()=>{
 
