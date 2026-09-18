@@ -88,12 +88,12 @@ export default function Header({ onCartClick, onSearchClick }) {
               <span className="material-symbols-outlined text-[20px]">search</span>
             </button>
 
-            <div className="relative hidden sm:block">
+            <div className="relative block">
               
             <select
               value={currency}
                onChange={(e) => setCurrency(e.target.value)}
-               className="appearance-none bg-surface-container-low text-on-surface font-label-code text-[0.6875rem] uppercase pl-space-sm pr-space-lg py-1 border border-outline-variant/40 rounded cursor-pointer"
+                className="appearance-none bg-surface-container-low text-on-surface font-label-code text-[0.625rem] sm:text-[0.6875rem] uppercase pl-space-xs sm:pl-space-sm pr-space-md sm:pr-space-lg py-1 border border-outline-variant/40 rounded cursor-pointer"
             >
               <option value="USD">USD ($)</option>
               <option value="NGN">NGN (₦)</option>
@@ -148,19 +148,6 @@ export default function Header({ onCartClick, onSearchClick }) {
         {link.label}
       </Link>
     ))}
-
-    <div className="flex items-center justify-between py-space-sm">
-      <span className="text-on-surface-variant">Currency</span>
-      <select
-        value={currency}
-        onChange={(e) => setCurrency(e.target.value)}
-        className="appearance-none bg-surface-container-low text-on-surface font-label-code text-[0.6875rem] uppercase px-space-sm py-1 border border-outline-variant/40 rounded"
-      >
-        <option value="USD">USD ($)</option>
-        <option value="NGN">NGN (₦)</option>
-        <option value="GBP">GBP (£)</option>
-      </select>
-    </div>
   </nav>
 )}
       </header>
