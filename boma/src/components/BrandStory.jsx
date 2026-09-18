@@ -1,6 +1,6 @@
 export default function BrandStory() {
   return (
-    <section className="w-full grid grid-cols-1 lg:grid-cols-2">
+    <section id="brand-story" className="w-full grid grid-cols-1 lg:grid-cols-2">
       {/* Image side */}
 {/* Image side */}
 <div className="relative w-full h-[50vh] lg:h-auto min-h-[400px] overflow-hidden">

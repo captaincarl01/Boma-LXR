@@ -8,8 +8,8 @@ import { useWishlist } from "../context/WishlistContext";
 const NAV_LINKS = [
   { label: "Home", path: "/" },
   { label: "Collection", path: "/collection" },
-  { label: "Lookbook", path: "/lookbook" },
-  { label: "Brand Story", path: "/brand-story" },
+  { label: "Lookbook", path: "/#lookbook" },
+  { label: "Brand Story", path: "/#brand-story" },
 ];
 
 export default function Header({ onCartClick, onSearchClick }) {

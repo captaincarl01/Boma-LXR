@@ -32,7 +32,7 @@ function LookbookImage({ image }) {
 
 export default function LookbookPreview() {
   return (
-    <section className="w-full px-gutter-mobile lg:px-margin py-space-xl">
+    <section id="lookbook" className="w-full px-gutter-mobile lg:px-margin py-space-xl">
       <div className="flex flex-col items-center text-center mb-space-lg">
         <span className="font-label-caps text-[0.75rem] tracking-[0.3em] uppercase text-primary">
           Editorial
