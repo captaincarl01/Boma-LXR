@@ -2,7 +2,7 @@ import { useCart } from "../context/CartContext";
 import { useCurrency } from "../context/CurrencyContext";
 
 export default function CartDrawer({ isOpen, onClose }) {
-  const { items, removeFromCart, updateQuantity, cartTotal, getWhatsAppCheckoutLink, getCartItemId } = useCart();
+ const { items, removeFromCart, updateQuantity, cartTotal, getWhatsAppCheckoutLink, getCartItemId, clearCart } = useCart();
   const { formatPrice } = useCurrency();
 
   return (
