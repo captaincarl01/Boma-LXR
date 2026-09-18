@@ -8,9 +8,7 @@ const NAV_LINKS = [
   { label: "Home", path: "/" },
   { label: "Collection", path: "/collection" },
   { label: "Lookbook", path: "/lookbook" },
-  { label: "Archive", path: "/archive" },
   { label: "Brand Story", path: "/brand-story" },
-  { label: "Atelier", path: "/atelier" },
 ];
 
 export default function Header({ onCartClick, onSearchClick }) {
@@ -28,12 +26,12 @@ export default function Header({ onCartClick, onSearchClick }) {
           {[0, 1].map((i) => (
             <span key={i} className="flex items-center gap-space-sm">
               <span className="flex items-center gap-space-sm">
-                <span>EXCLUSIVE DROP 04: MONOLITH COLLECTION NOW LIVE</span>
+                <span>EXCLUSIVE DROPS AVAILABLE</span>
                 <span className="text-outline">//</span>
-                <span>COMPLIMENTARY GLOBAL EXPRESS SHIPPING ON ORDERS OVER $350</span>
+                <span>ONGOING PROMO FOR NEW CUSTMOERS</span>
               </span>
               <span className="flex items-center gap-space-sm">
-                <span>LAGOS // LONDON // NEW YORK ATELIERS</span>
+                <span>IBADAN // LAGOSS // NATION WIDE</span>
                 <span className="text-outline">//</span>
                 <span>ARCHIVAL PIECES RESTOCKED IN LIMITED QUANTITIES</span>
               </span>

@@ -48,12 +48,13 @@ export default function ProductCard({ product, onQuickView }) {
 
        <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-space-xs p-space-sm translate-y-0 lg:translate-y-full lg:group-hover:translate-y-0 transition-transform duration-300 ease-out">
           <button
+            type="button"
             onClick={() =>
-    addToCart({
-      ...product,
-      image: product.colors?.[0]?.image || product.image,
-      selectedSize: product.sizes?.[0],
-      selectedColor: product.colors?.[0]?.name,
+              addToCart({
+                ...product,
+                image: product.colors?.[0]?.image || product.image,
+                selectedSize: product.sizes?.[0],
+                selectedColor: product.colors?.[0]?.name,
     })
   }
             className="w-full py-2.5 bg-primary text-on-primary font-label-caps text-[0.6875rem] tracking-[0.15em] uppercase hover:bg-primary/90 transition-colors"
