@@ -2,18 +2,22 @@ import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
 import { CartProvider } from "./context/CartContext";
 import { CurrencyProvider } from "./context/CurrencyContext";
+import { WishlistProvider } from "./context/WishlistContext";
 import Home from "./pages/Home";
 import Collection from "./pages/Collection";
+
 
 function App() {
   return (
     <ThemeProvider>
       <CurrencyProvider>
         <CartProvider>
+          <WishlistProvider>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/collection" element={<Collection />} />
           </Routes>
+          </WishlistProvider>
         </CartProvider>
       </CurrencyProvider>
     </ThemeProvider>

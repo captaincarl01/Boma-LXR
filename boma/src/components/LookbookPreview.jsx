@@ -50,11 +50,6 @@ export default function LookbookPreview() {
 
       <div className="flex justify-center mt-space-lg">
         
-        <a  href="/lookbook"
-          className="px-10 py-3.5 border border-outline-variant text-on-surface font-label-caps text-[0.75rem] tracking-[0.2em] uppercase hover:border-primary hover:text-primary transition-colors"
-        >
-          View Lookbook
-        </a>
       </div>
     </section>
   );

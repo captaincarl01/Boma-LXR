@@ -31,7 +31,7 @@ export default function BrandStory() {
         <p className="font-body-md text-[0.9375rem] text-on-surface-variant leading-relaxed mb-space-md max-w-lg">
           Boma LXR started as a rejection of the idea that luxury streetwear
           had to look outside Africa for its identity. Every silhouette we
-          cut, every fabric we choose, carries the weight of Lagos — its
+          cut, every fabric we choose, carries the weight of NIgeria — its
           pace, its color, its confidence — reworked into something that
           holds its own on any street in the world.
         </p>
@@ -43,12 +43,6 @@ export default function BrandStory() {
           fashion identity, worn without apology.
         </p>
 
-        
-        <a  href="/brand-story"
-          className="w-fit px-8 py-3 border border-outline-variant text-on-surface font-label-caps text-[0.75rem] tracking-[0.2em] uppercase hover:border-primary hover:text-primary transition-colors"
-        >
-          Read Our Full Story
-        </a>
       </div>
     </section>
   );

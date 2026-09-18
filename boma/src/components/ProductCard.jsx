@@ -1,11 +1,13 @@
-import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { useCurrency } from "../context/CurrencyContext";
+import { useWishlist } from "../context/WishlistContext";
 
 export default function ProductCard({ product, onQuickView }) {
-  const [isFavorited, setIsFavorited] = useState(false);
   const { addToCart } = useCart();
   const { formatPrice } = useCurrency();
+  const { isInWishlist, toggleWishlist } = useWishlist();
+
+  const isFavorited = isInWishlist(product.id);
 
   return (
     <div className="group relative bg-surface-container-low border border-outline-variant/20 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_0_1px_theme(colors.primary),0_20px_40px_-15px_rgba(0,0,0,0.5)]">
@@ -26,13 +28,18 @@ export default function ProductCard({ product, onQuickView }) {
       {/* Image */}
       <div className="relative w-full aspect-[3/4] overflow-hidden bg-surface-container">
         <img
-          src={product.image}
+          src={product.colors?.[0]?.image || product.image}
           alt={product.name}
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
 
         <button
-          onClick={() => setIsFavorited((v) => !v)}
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleWishlist(product);
+          }}
           aria-label="Add to wishlist"
           className="absolute top-space-sm right-space-sm z-10 w-8 h-8 flex items-center justify-center rounded-full bg-surface/80 backdrop-blur-sm hover:bg-surface transition-colors"
         >
@@ -46,25 +53,30 @@ export default function ProductCard({ product, onQuickView }) {
           </span>
         </button>
 
-       <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-space-xs p-space-sm translate-y-0 lg:translate-y-full lg:group-hover:translate-y-0 transition-transform duration-300 ease-out">
+        <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-space-xs p-space-sm translate-y-0 lg:translate-y-full lg:group-hover:translate-y-0 transition-transform duration-300 ease-out">
           <button
-  type="button"
-  onClick={(e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    addToCart({
-      ...product,
-      image: product.colors?.[0]?.image || product.image,
-      selectedSize: product.sizes?.[0],
-      selectedColor: product.colors?.[0]?.name,
-    });
-  }}
-  className="w-full py-2.5 bg-primary text-on-primary font-label-caps text-[0.6875rem] tracking-[0.15em] uppercase hover:bg-primary/90 transition-colors"
->
-  Add to Cart
-</button>
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              addToCart({
+                ...product,
+                image: product.colors?.[0]?.image || product.image,
+                selectedSize: product.sizes?.[0],
+                selectedColor: product.colors?.[0]?.name,
+              });
+            }}
+            className="w-full py-2.5 bg-primary text-on-primary font-label-caps text-[0.6875rem] tracking-[0.15em] uppercase hover:bg-primary/90 transition-colors"
+          >
+            Add to Cart
+          </button>
           <button
-              onClick={() => onQuickView?.(product)}
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              onQuickView?.(product);
+            }}
             className="w-full py-2.5 bg-surface/90 backdrop-blur-sm text-on-surface font-label-caps text-[0.6875rem] tracking-[0.15em] uppercase hover:bg-surface transition-colors"
           >
             Quick View

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 import { useCart } from "../context/CartContext";
 import { useCurrency } from "../context/CurrencyContext";
+import { useWishlist } from "../context/WishlistContext";
 
 const NAV_LINKS = [
   { label: "Home", path: "/" },
@@ -16,7 +17,7 @@ export default function Header({ onCartClick, onSearchClick }) {
   const { cartCount } = useCart();
   const { currency, setCurrency } = useCurrency();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [wishlistCount] = useState(0); // TODO: replace with real WishlistContext when we build it
+  const { wishlistCount } = useWishlist(); // TODO: replace with real WishlistContext when we build it
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex flex-col">
@@ -31,7 +32,7 @@ export default function Header({ onCartClick, onSearchClick }) {
                 <span>ONGOING PROMO FOR NEW CUSTMOERS</span>
               </span>
               <span className="flex items-center gap-space-sm">
-                <span>IBADAN // LAGOSS // NATION WIDE</span>
+                <span>IBADAN // LAGOS // NATION WIDE</span>
                 <span className="text-outline">//</span>
                 <span>LIMITED QUANTITIES</span>
               </span>

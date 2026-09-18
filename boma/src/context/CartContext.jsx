@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
 // TODO: replace with your real WhatsApp business number, format: countrycode + number, no + or spaces
-const WHATSAPP_NUMBER = "2340000000000";
+const WHATSAPP_NUMBER = "2348181261072";
 const CART_STORAGE_KEY = "boma-lxr-cart";
 
 const CartContext = createContext();
