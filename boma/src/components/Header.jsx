@@ -33,7 +33,7 @@ export default function Header({ onCartClick, onSearchClick }) {
               <span className="flex items-center gap-space-sm">
                 <span>IBADAN // LAGOSS // NATION WIDE</span>
                 <span className="text-outline">//</span>
-                <span>ARCHIVAL PIECES RESTOCKED IN LIMITED QUANTITIES</span>
+                <span>LIMITED QUANTITIES</span>
               </span>
             </span>
           ))}
