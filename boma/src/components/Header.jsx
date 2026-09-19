@@ -17,6 +17,7 @@ export default function Header({ onCartClick, onSearchClick }) {
   const { cartCount } = useCart();
   const { currency, setCurrency } = useCurrency();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [currencyDropdownOpen, setCurrencyDropdownOpen] = useState(false);
   const { wishlistCount } = useWishlist(); // TODO: replace with real WishlistContext when we build it
 
   return (
@@ -88,19 +89,48 @@ export default function Header({ onCartClick, onSearchClick }) {
               <span className="material-symbols-outlined text-[20px]">search</span>
             </button>
 
-            <div className="relative block">
-              
-            <select
-              value={currency}
-               onChange={(e) => setCurrency(e.target.value)}
-                className="appearance-none bg-surface-container-low text-on-surface font-label-code text-[0.625rem] sm:text-[0.6875rem] uppercase pl-space-xs sm:pl-space-sm pr-space-md sm:pr-space-lg py-1 border border-outline-variant/40 rounded cursor-pointer"
-            >
-              <option value="USD">USD ($)</option>
-              <option value="NGN">NGN (₦)</option>
-              <option value="GBP">GBP (£)</option>
-            </select>
+<div className="relative">
+  <button
+    type="button"
+    onClick={() => setCurrencyDropdownOpen((v) => !v)}
+    className="flex items-center gap-1 bg-surface-container-low text-on-surface font-label-code text-[0.625rem] sm:text-[0.6875rem] uppercase px-space-xs sm:px-space-sm py-1 border border-outline-variant/40 rounded cursor-pointer"
+  >
+    {currency}
+    <span className="material-symbols-outlined text-[14px]">expand_more</span>
+  </button>
 
-            </div>
+  {currencyDropdownOpen && (
+    <>
+      {/* Invisible overlay to close dropdown when tapping outside it */}
+      <div
+        className="fixed inset-0 z-40"
+        onClick={() => setCurrencyDropdownOpen(false)}
+      />
+
+      <div className="absolute right-0 mt-space-xs w-32 bg-surface border border-outline-variant/30 rounded-md shadow-lg z-50 overflow-hidden">
+        {[
+          { code: "USD", label: "USD ($)" },
+          { code: "NGN", label: "NGN (₦)" },
+          { code: "GBP", label: "GBP (£)" },
+        ].map((opt) => (
+          <button
+            key={opt.code}
+            type="button"
+            onClick={() => {
+              setCurrency(opt.code);
+              setCurrencyDropdownOpen(false);
+            }}
+            className={`w-full text-left px-space-md py-space-sm font-body-sm text-[0.75rem] hover:bg-surface-container-low transition-colors ${
+              currency === opt.code ? "text-primary" : "text-on-surface"
+            }`}
+          >
+            {opt.label}
+          </button>
+        ))}
+      </div>
+    </>
+  )}
+</div>
 
             <button
               onClick={toggleTheme}
